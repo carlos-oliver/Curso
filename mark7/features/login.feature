@@ -17,13 +17,13 @@ Funcionalidade: Login
     @sprint1
     Cenario: Senha incorreta
 
-        Quando faço login com senha incorreta
+        Quando faço login com "eu@papito.io" e "99999"
         Então vejo a seguinte mensagem "Senha invalida."
 
     @sprint1
     Cenario: Usuário não cadastrado
 
-        Quando faço com um email que não está cadastrado
+        Quando faço login com "usuarioerrado@papito.io" e "123456"
         Então vejo a seguinte mensagem "Usuário não cadastrado."
 
     @sprint2
