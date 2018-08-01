@@ -5,10 +5,10 @@
   
   Quando("faço login com {string} e {string}") do |email, senha|
     find('#login_email').set email
-    find('input[name=passoword]').set senha
-    sleep 10
+    find('input[name=password]').set senha
+    find('button[id*=btnLogin]').click
   end
   
   Então("vejo a seguinte mensagem {string}") do |mensagem|
-    pending # Write code here that turns the phrase above into concrete actions
+    expect(page).to have_content mensagem
   end
