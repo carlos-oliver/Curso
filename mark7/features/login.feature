@@ -8,26 +8,23 @@ Funcionalidade: Login
     Contexto: Home
         Dado que eu acesso o sistema
 
-    @sprint1
+    @sprint1 @logout
     Cenario: Usuário autenticado
         
         Quando faço login com "eu@papito.io" e "123456"
-        Então vejo a seguinte mensagem "Olá, Fernando"
+        Então vejo a mensagem de boas vindas "Olá, Fernando"
     
-    @sprint1
-    Cenario: Senha incorreta
 
-        Quando faço login com "eu@papito.io" e "99999"
-        Então vejo a seguinte mensagem "Senha invalida."
+    @tentativa
+    Esquema do Cenario: Tentativa de login
 
-    @sprint1
-    Cenario: Usuário não cadastrado
+        Quando faço login com "<email>" e "<senha>"
+        Então vejo a mensagem de alerta "<saida>"
 
-        Quando faço login com "usuarioerrado@papito.io" e "123456"
-        Então vejo a seguinte mensagem "Usuário não cadastrado."
-
-    @sprint2
-    Cenario: Email deve obirgatório
-
-        Quando faço login sem informar e email 
-        Então vejo a mensagem "Email deve ser preenchido."
+    Exemplos:
+      | email                   | senha  | saida                       |
+      | eu@papito.io            | 999999 | Senha inválida.             |
+      | usuarioerrado@papito.io | 123456 | Usuário não cadastrado.     |
+      |                         | 123456 | Email incorreto ou ausente. |
+      | eu@papito.io            |        | Senha ausente.              |
+      | eu#papito.io            | aed323 | Email incorreto ou ausente. |
