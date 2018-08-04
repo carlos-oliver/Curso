@@ -12,7 +12,7 @@ Funcionalidade: Cadastro de usuários
         
         E possuo os seguintes dados:
             | nome  | Fernando             |
-            | email | fernando@qaninja.net |
+            | email | 1234fernando@qaninja.net |
             | senha | 123456               |
         Quando faço o meu cadastro 
         Então vejo a mensagem "Olá, Fernando"

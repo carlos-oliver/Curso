@@ -1,15 +1,20 @@
+
 Dado("que eu estou no formulário de cadastro") do                             
   @cadastro_page.registra
 end                                                                           
                                                                               
-Dado("possuo os seguintes dados:") do |table|                                 
-  @cadastro_page.cadastrar(table.nome)
-end                                                                           
+Dado("possuo os seguintes dados:") do |table|
+    @nome = table.rows_hash['nome']
+    @email = table.rows_hash['email']
+    @senha = table.rows_hash['senha']
+    sleep 5
+end                                                                                                           
                                                                               
 Quando("faço o meu cadastro") do                                              
-  pending # Write code here that turns the phrase above into concrete actions 
+  @cadastro_page.cadastro(@nome, @email, @senha)
+  #sleep 5 
 end                                                                           
                                                                               
-Então("vejo a mensagem {string}") do |string|                                 
-  pending # Write code here that turns the phrase above into concrete actions 
-end                                                                           
+Então("vejo a mensagem {string}") do |mensagem|                                 
+  expect(@cadastro_page.mensagem_b_vindas).to have_content mensagem
+end   
