@@ -15,5 +15,9 @@ class CadastroPage
       find('.col-md-6')
     end
 
+    def mensagem_alerta
+      find('.col-md-12')
+    end
+
 end
   

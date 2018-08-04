@@ -7,14 +7,16 @@ Dado("possuo os seguintes dados:") do |table|
     @nome = table.rows_hash['nome']
     @email = table.rows_hash['email']
     @senha = table.rows_hash['senha']
-    sleep 5
 end                                                                                                           
                                                                               
 Quando("faço o meu cadastro") do                                              
-  @cadastro_page.cadastro(@nome, @email, @senha)
-  #sleep 5 
+  @cadastro_page.cadastro(@nome, @email, @senha) 
 end                                                                           
                                                                               
 Então("vejo a mensagem {string}") do |mensagem|                                 
   expect(@cadastro_page.mensagem_b_vindas).to have_content mensagem
 end   
+
+Então("vejo a mensagem de alerta{string}") do |mensagem|
+  expect(@cadastro_page.mensagem_alerta).to have_content mensagem
+end

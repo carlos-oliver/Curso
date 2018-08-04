@@ -7,7 +7,7 @@ Funcionalidade: Cadastro de usuários
     Contexto: Formulário
         Dado que eu estou no formulário de cadastro
 
-    @teste @cadastra
+    @teste1
     Cenário: Cadastro simples
         
         E possuo os seguintes dados:
@@ -17,6 +17,7 @@ Funcionalidade: Cadastro de usuários
         Quando faço o meu cadastro 
         Então vejo a mensagem "Olá, Fernando"
 
+    @teste2
     Esquema do Cenario: Campos obrigatórios
 
         E possuo os seguintes dados:
@@ -24,7 +25,7 @@ Funcionalidade: Cadastro de usuários
         | email | <email> |
         | senha | <senha> |
         Quando faço o meu cadastro 
-        Então vejo a mensagem "<saida>"
+        Então vejo a mensagem de alerta"<saida>"
 
         Exemplos:
             | nome     | email                | senha  | saida                |
