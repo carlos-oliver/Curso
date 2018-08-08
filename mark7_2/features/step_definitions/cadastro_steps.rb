@@ -1,6 +1,7 @@
 
 Dado("que eu estou no formulário de cadastro") do                             
   @cadastro_page.registra
+  DAO.new.remover_usuario(@email)
 end                                                                           
                                                                               
 Dado("possuo os seguintes dados:") do |table|
